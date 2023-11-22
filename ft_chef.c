@@ -6,15 +6,15 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 13:14:46 by deordone          #+#    #+#             */
-/*   Updated: 2023/11/21 19:10:50 by deordone         ###   ########.fr       */
+/*   Updated: 2023/11/22 18:52:00 by deordone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*funcion que tome los argumentos y los pase a enteros*/
-int ft_atoi (char **argv)
+/*paso 1. funcion que tome los argumentos y los pase a enteros*/
+int	ft_atoi(char **argv)
 {
 	int	i;
-	int j;
+	int	j;
 	int	nb;
 	int	sign;
 
@@ -38,20 +38,11 @@ int ft_atoi (char **argv)
 	return ((int)(nb * sign));
 }
 
+/* paso 2. tengo que conectar cada nodo*/
 
-/* tengo que hacer una funcion que tome los argumentos y los pase a enteros ft_atoi*/
-t_list *ft_split(int *tab)
-{
-	int i;
-	int j;
-	
-	i = 0;
-	j = 1;
-	while (argv[j][i])
-	{
-		if (argv[j][i] != ' ' && argv[j][i] != '\t' && argv[j][i] != '\n')
-		{
-			
-		}
-	}
+void	ft_attach(t_list *node, t_list **lst)
+{	
+		
+	ft_lstadd_back(node);
+		
 }
