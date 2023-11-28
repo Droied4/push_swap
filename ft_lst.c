@@ -6,17 +6,17 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 13:01:24 by deordone          #+#    #+#             */
-/*   Updated: 2023/11/22 18:50:27 by deordone         ###   ########.fr       */
+/*   Updated: 2023/11/23 13:38:34 by deordone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*ft_newnode(int *number)
+t_list	*ft_newnode(int number)
 {
 	t_list	*node;
 
-	node = (t_list *)malloc(sizeof(*nodo));
+	node = (t_list *)malloc(sizeof(*node));
 	if (!node)
 		return (NULL);
 	node->number = number;
@@ -78,7 +78,6 @@ void	ft_del(t_list **lst)
 	while (*lst)
 	{
 		temp = (*lst)->next;
-		free((*lst)->number;
 		free(*lst);
 		*lst = temp;
 	}

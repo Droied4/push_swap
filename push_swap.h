@@ -6,7 +6,7 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:12:07 by deordone          #+#    #+#             */
-/*   Updated: 2023/11/21 13:28:23 by deordone         ###   ########.fr       */
+/*   Updated: 2023/11/23 16:44:24 by deordone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,18 @@
 
 typedef struct s_list
 {
-	int				*number;
+	int				number;
 	struct s_list	*next;
-	struct s_list	*prev;
 }					t_list;
+/* ╔═══════════════╗
+ * 	 	 Main	
+   ╚═══════════════╝	*/
+int push_swap(int argc, char **argv, t_list **lst);
 /* ╔═══════════════╗
  * 		 Chef
    ╚═══════════════╝	*/
-
+int					ft_atoi(char **argv, int j);
+void				ft_attach(char **argv, t_list **lst, int j);
 /* ╔═══════════════╗
  * 		checker
    ╚═══════════════╝	*/
@@ -34,10 +38,10 @@ int					ft_isvalid(int argc, char **argv);
 /* ╔═══════════════╗
  * 		lists
    ╚═══════════════╝	*/
-t_list *ft_newnode(int *number);
-int ft_lstsize(t_list *lst);
-t_list *ft_lastnode(t_list *lst);
-void ft_lstadd_back(t_list **lst, t_list *new);
-void ft_del(t_list **lst);
+t_list				*ft_newnode(int number);
+int					ft_lstsize(t_list *lst);
+t_list				*ft_lastnode(t_list *lst);
+void				ft_lstadd_back(t_list **lst, t_list *new);
+void				ft_del(t_list **lst);
 
 #endif
