@@ -6,7 +6,7 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 18:48:57 by deordone          #+#    #+#             */
-/*   Updated: 2023/11/23 16:57:08 by deordone         ###   ########.fr       */
+/*   Updated: 2023/11/28 18:28:06 by deordone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ int	push_swap(int argc, char **argv, t_list **lst)
 	while (i < argc)
 	{
 		ft_attach(argv, lst, j);
-		printf("%d\n", (*lst)->number);
 		j++;
 		i++;
-		*lst = (*lst)->next;
 	}
+	if (ft_isrepeat(argv, lst) < 1)
+		return (-1);
 	return (1);
 }
 
@@ -40,3 +40,4 @@ int	main(int argc, char **argv)
 	push_swap(argc, argv, &lst);
 	return (0);
 }
+
