@@ -6,42 +6,12 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 12:29:36 by deordone          #+#    #+#             */
-/*   Updated: 2023/11/28 18:22:16 by deordone         ###   ########.fr       */
+/*   Updated: 2023/11/29 15:50:05 by deordone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
 
-/* verifica si hay numeros repetidos en la lista*/
-
-int ft_isrepeat(char **argv, t_list **lst)
-{
-	t_list *temp1;
-	t_list *temp2;
-
-	temp1 = *lst;
-	if (!temp1)
-		return (-1);
-	while (temp1 != NULL)
-	{
-		temp2 = temp1;
-		while (temp2 != NULL)
-		{
-			temp2 = temp2->next;
-			if (!temp2)
-				break ;
-			if (temp2->number == temp1->number)
-			{
-				printf("Error numeros iguales");
-				return (-1);
-			}
-		}
-		temp1 = temp1->next;
-	}
-	printf("Ok");
-	return (1);
-}
-
-/* this function will check if all the parameters are valid */
+/* check 1 - looks for valid parameters */
 int	ft_isvalid(int argc, char **argv)
 {
 	int	i;
@@ -66,6 +36,56 @@ int	ft_isvalid(int argc, char **argv)
 			i++;
 		}
 		j++;
+	}
+	return (1);
+}
+
+/* check 2 - looks for equal numbers*/
+
+int ft_isrepeat(t_list **lst)
+{
+	t_list *temp1;
+	t_list *temp2;
+
+	if (!lst)
+		return (-1);
+	temp1 = *lst;
+	while (temp1 != NULL)
+	{
+		temp2 = temp1;
+		while (temp2 != NULL)
+		{
+			temp2 = temp2->next;
+			if (!temp2)
+				break ;
+			if (temp2->number == temp1->number)
+			{
+				printf("Error - Repeat");
+				return (-1);
+			}
+		}
+		temp1 = temp1->next;
+	}
+	return (1);
+}
+
+/* check 3 - look for the INT_MIN and MAX_INT */
+
+int ft_islimited(t_list **lst)
+{
+	t_list *temp1;
+	
+	if (!lst)
+		return (-1);
+	temp1 = *lst;
+	while (temp1 != NULL)
+	{
+		if (temp1->number > INT_MAX || temp1->number < INT_MIN)
+		{
+			printf("Error - Limited");
+			return (-1);
+		}
+		temp1 = temp1->next;
 	}
 	return (1);
 }

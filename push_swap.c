@@ -6,7 +6,7 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 18:48:57 by deordone          #+#    #+#             */
-/*   Updated: 2023/11/28 18:28:06 by deordone         ###   ########.fr       */
+/*   Updated: 2023/11/29 15:42:38 by deordone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	push_swap(int argc, char **argv, t_list **lst)
 		j++;
 		i++;
 	}
-	if (ft_isrepeat(argv, lst) < 1)
+	if (ft_iscorrect(lst) < 1)
 		return (-1);
 	return (1);
 }
@@ -36,7 +36,6 @@ int	main(int argc, char **argv)
 
 	if (ft_isvalid(argc, argv) < 0)
 		return (-1);
-	printf("checker nice\n");
 	push_swap(argc, argv, &lst);
 	return (0);
 }

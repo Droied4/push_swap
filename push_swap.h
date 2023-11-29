@@ -6,7 +6,7 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:12:07 by deordone          #+#    #+#             */
-/*   Updated: 2023/11/28 18:27:14 by deordone         ###   ########.fr       */
+/*   Updated: 2023/11/29 17:24:41 by deordone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 /* Stefy pro-tip 
 typedef struct s_stack
 {
@@ -26,8 +27,9 @@ typedef struct s_stack
 typedef struct s_list
 {
 	int				number;
-	//int				index;
+	int				index;
 	struct s_list	*next;
+	struct s_list	*prev;
 }					t_list;
 /* ╔═══════════════╗
  * 	 	 Main	
@@ -42,7 +44,14 @@ void				ft_attach(char **argv, t_list **lst, int j);
  * 		checker
    ╚═══════════════╝	*/
 int					ft_isvalid(int argc, char **argv);
-int					ft_isrepeat(char **argv, t_list **lst);
+int					ft_isrepeat(t_list **lst);
+int					ft_islimited(t_list **lst);
+int					ft_iscorrect(t_list **lst);
+/* ╔═══════════════╗
+ * 	   Movements
+   ╚═══════════════╝	*/
+
+
 /* ╔═══════════════╗
  * 		lists
    ╚═══════════════╝	*/
