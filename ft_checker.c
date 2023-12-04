@@ -6,7 +6,7 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 12:29:36 by deordone          #+#    #+#             */
-/*   Updated: 2023/12/04 15:12:49 by deordone         ###   ########.fr       */
+/*   Updated: 2023/12/04 17:42:27 by deordone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -70,10 +70,41 @@ int ft_isrepeated(t_list **stack_a)
 
 int ft_islimited(long nb)
 {
-	if (nb > INT_MAX || nb < INT_MIN)
-		return (-1);
-	else
+	if (nb <= INT_MAX && nb >= INT_MIN)
 		return (nb);
+	else
+		return (-1);
 }
 
+int ft_iscorrect(int argc, char **argv, t_list **stack_a)
+{
+	int j;
+	int i;
 
+	if (ft_isvalid(argc, argv) < 0)
+		ft_error();
+	i = 1;
+	j = 1;
+	while (i < argc)
+	{
+		if(ft_attach(argv, stack_a, j) < 0)
+		{
+			ft_del(stack_a);
+			ft_error();
+		}
+		j++;
+		i++;
+	}	
+	if (ft_isrepeated(stack_a) < 0)
+	{
+		ft_del(stack_a);
+		ft_error();
+	}
+	return (1);
+}
+
+void ft_error(void)
+{
+	write(2, "Error\n", 6);
+	exit (1);
+}

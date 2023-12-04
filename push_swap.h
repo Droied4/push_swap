@@ -6,7 +6,7 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:12:07 by deordone          #+#    #+#             */
-/*   Updated: 2023/12/04 14:58:44 by deordone         ###   ########.fr       */
+/*   Updated: 2023/12/04 17:35:48 by deordone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ typedef struct s_list
 /* ╔═══════════════╗
  * 			 Main
    ╚═══════════════╝	*/
-int					push_swap(int argc, char **argv, t_list **stack_a);
+
 /* ╔═══════════════╗
  * 			Chef
    ╚═══════════════╝	*/
@@ -46,7 +46,8 @@ int				ft_attach(char **argv, t_list **stack, int j);
 int					ft_isvalid(int argc, char **argv);
 int					ft_isrepeated(t_list **stack_a);
 int					ft_islimited(long nb);
-int					ft_iscorrect(t_list **lst);
+int					ft_iscorrect(int argc, char **argv, t_list **stack_a);
+void				ft_error(void);
 /* ╔═══════════════╗
  * 		Movements
    ╚═══════════════╝	*/
@@ -54,7 +55,7 @@ int					ft_iscorrect(t_list **lst);
 /* ╔═══════════════╗
  * 		lists
    ╚═══════════════╝	*/
-int					ft_error(t_list **lst);
+int					ft_del(t_list **lst);
 int					ft_lstsize(t_list *lst);
 t_list				*ft_lastnode(t_list *lst);
 

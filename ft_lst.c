@@ -6,13 +6,13 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 13:01:24 by deordone          #+#    #+#             */
-/*   Updated: 2023/12/04 15:17:16 by deordone         ###   ########.fr       */
+/*   Updated: 2023/12/04 17:22:33 by deordone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_error(t_list **lst)
+int	ft_del(t_list **lst)
 {
 	t_list	*temp;
 
