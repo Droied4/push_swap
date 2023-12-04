@@ -6,7 +6,7 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 12:29:36 by deordone          #+#    #+#             */
-/*   Updated: 2023/11/29 15:50:05 by deordone         ###   ########.fr       */
+/*   Updated: 2023/12/04 15:12:49 by deordone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -42,14 +42,14 @@ int	ft_isvalid(int argc, char **argv)
 
 /* check 2 - looks for equal numbers*/
 
-int ft_isrepeat(t_list **lst)
+int ft_isrepeated(t_list **stack_a)
 {
 	t_list *temp1;
 	t_list *temp2;
 
-	if (!lst)
+	if (!stack_a)
 		return (-1);
-	temp1 = *lst;
+	temp1 = *stack_a;
 	while (temp1 != NULL)
 	{
 		temp2 = temp1;
@@ -59,10 +59,7 @@ int ft_isrepeat(t_list **lst)
 			if (!temp2)
 				break ;
 			if (temp2->number == temp1->number)
-			{
-				printf("Error - Repeat");
 				return (-1);
-			}
 		}
 		temp1 = temp1->next;
 	}
@@ -71,21 +68,12 @@ int ft_isrepeat(t_list **lst)
 
 /* check 3 - look for the INT_MIN and MAX_INT */
 
-int ft_islimited(t_list **lst)
+int ft_islimited(long nb)
 {
-	t_list *temp1;
-	
-	if (!lst)
+	if (nb > INT_MAX || nb < INT_MIN)
 		return (-1);
-	temp1 = *lst;
-	while (temp1 != NULL)
-	{
-		if (temp1->number > INT_MAX || temp1->number < INT_MIN)
-		{
-			printf("Error - Limited");
-			return (-1);
-		}
-		temp1 = temp1->next;
-	}
-	return (1);
+	else
+		return (nb);
 }
+
+

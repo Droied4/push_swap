@@ -6,59 +6,56 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:12:07 by deordone          #+#    #+#             */
-/*   Updated: 2023/11/29 17:24:41 by deordone         ###   ########.fr       */
+/*   Updated: 2023/12/04 14:58:44 by deordone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+# include <limits.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <limits.h>
-/* Stefy pro-tip 
+/* Stefy pro-tip
 typedef struct s_stack
 {
-	int	len;
-	t_list *first;
-	t_list *last;
+	int				len;
+	t_list			*first;
+	t_list			*last;
 }	t_stack; */
 typedef struct s_list
 {
 	int				number;
-	int				index;
+	// int				index;
 	struct s_list	*next;
-	struct s_list	*prev;
+	// struct s_list	*prev;
 }					t_list;
 /* ╔═══════════════╗
- * 	 	 Main	
+ * 			 Main
    ╚═══════════════╝	*/
-int push_swap(int argc, char **argv, t_list **lst);
+int					push_swap(int argc, char **argv, t_list **stack_a);
 /* ╔═══════════════╗
- * 		 Chef
+ * 			Chef
    ╚═══════════════╝	*/
 int					ft_atoi(char **argv, int j);
-void				ft_attach(char **argv, t_list **lst, int j);
+int				ft_attach(char **argv, t_list **stack, int j);
 /* ╔═══════════════╗
  * 		checker
    ╚═══════════════╝	*/
 int					ft_isvalid(int argc, char **argv);
-int					ft_isrepeat(t_list **lst);
-int					ft_islimited(t_list **lst);
+int					ft_isrepeated(t_list **stack_a);
+int					ft_islimited(long nb);
 int					ft_iscorrect(t_list **lst);
 /* ╔═══════════════╗
- * 	   Movements
+ * 		Movements
    ╚═══════════════╝	*/
-
 
 /* ╔═══════════════╗
  * 		lists
    ╚═══════════════╝	*/
-t_list				*ft_newnode(int number);
+int					ft_error(t_list **lst);
 int					ft_lstsize(t_list *lst);
 t_list				*ft_lastnode(t_list *lst);
-void				ft_lstadd_back(t_list **lst, t_list *new);
-void				ft_del(t_list **lst);
 
 #endif

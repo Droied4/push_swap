@@ -6,22 +6,26 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 13:01:24 by deordone          #+#    #+#             */
-/*   Updated: 2023/11/23 13:38:34 by deordone         ###   ########.fr       */
+/*   Updated: 2023/12/04 15:17:16 by deordone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*ft_newnode(int number)
+int	ft_error(t_list **lst)
 {
-	t_list	*node;
+	t_list	*temp;
 
-	node = (t_list *)malloc(sizeof(*node));
-	if (!node)
-		return (NULL);
-	node->number = number;
-	node->next = NULL;
-	return (node);
+	if (!lst)
+		return (-1);
+	while (*lst)
+	{
+		temp = (*lst)->next;
+		free(*lst);
+		*lst = temp;
+	}
+	*lst = NULL;
+	return (-1);
 }
 
 int	ft_lstsize(t_list *lst)
@@ -53,33 +57,3 @@ t_list	*ft_lastnode(t_list *lst)
 	return (temp);
 }
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
-{
-	t_list	*temp;
-
-	if (lst)
-	{
-		if (*lst == NULL)
-			*lst = new;
-		else
-		{
-			temp = ft_lastnode(*lst);
-			temp->next = new;
-		}
-	}
-}
-
-void	ft_del(t_list **lst)
-{
-	t_list	*temp;
-
-	if (!lst)
-		return ;
-	while (*lst)
-	{
-		temp = (*lst)->next;
-		free(*lst);
-		*lst = temp;
-	}
-	*lst = NULL;
-}

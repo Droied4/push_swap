@@ -6,7 +6,7 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 13:14:46 by deordone          #+#    #+#             */
-/*   Updated: 2023/11/29 13:30:04 by deordone         ###   ########.fr       */
+/*   Updated: 2023/12/04 15:01:30 by deordone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 /*paso 1. funcion que tome los argumentos y los pase a enteros*/
 int	ft_atoi(char **argv, int j)
 {
-	int	i;
-	int	nb;
-	int	sign;
+	int		i;
+	long	nb;
+	int		sign;
 
 	i = 0;
 	sign = 1;
@@ -34,6 +34,8 @@ int	ft_atoi(char **argv, int j)
 	while (argv[j][i] >= '0' && argv[j][i] <= '9')
 	{	
 		nb = nb * 10 + (argv[j][i] - '0'); 
+		if (ft_islimited(nb) < 1)
+			return (-1);
 		i++;
 	}
 	return ((int)nb * sign);
@@ -41,26 +43,28 @@ int	ft_atoi(char **argv, int j)
 
 /*paso 2. tengo que conectar los nodos*/
 
-void	ft_attach(char **argv, t_list **lst, int j)
+int		ft_attach(char **argv, t_list **lst, int j)
 {
 	t_list	*new_node;
 	t_list *lastnod;
+	int new_number;
 
 	if (!argv[1][0])
-		return ;
+		return (-1);
 	new_node = malloc(sizeof(t_list));
 	if (!new_node)
-		return (ft_del(lst));
+		return (ft_error(lst));
 	lastnod = ft_lastnode(*lst);
 	if (!lastnod)
 		*lst = new_node;
 	else
-	{
 		lastnod->next = new_node;
-		new_node->prev = lastnod;
-	}
-	new_node->number = ft_atoi(argv, j);
+	new_number = ft_atoi(argv, j);
+	if (new_number < 1)
+		return (ft_error(lst));
+	new_node->number = new_number;
    	new_node->next = NULL;
+	return (1);
 }
 
 
