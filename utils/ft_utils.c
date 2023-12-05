@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_chef.c                                          :+:      :+:    :+:   */
+/*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 13:14:46 by deordone          #+#    #+#             */
-/*   Updated: 2023/12/05 10:59:25 by deordone         ###   ########.fr       */
+/*   Created: 2023/12/05 11:49:01 by deordone          #+#    #+#             */
+/*   Updated: 2023/12/05 11:49:04 by deordone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*paso 1. funcion que tome los argumentos y los pase a enteros*/
-int	ft_atoi(char **argv, int j)
+int	ft_atoi(char **argv, int j, t_list **stack_a)
 {
 	int		i;
 	long	nb;
@@ -32,36 +31,10 @@ int	ft_atoi(char **argv, int j)
 		i++;
 	}
 	while (argv[j][i] >= '0' && argv[j][i] <= '9')
-	{	
-		nb = nb * 10 + (argv[j][i] - '0'); 
-		ft_islimited(nb);
+	{
+		nb = nb * 10 + (argv[j][i] - '0');
+		ft_islimited(nb, stack_a);
 		i++;
 	}
 	return ((int)nb * sign);
 }
-
-/*paso 2. tengo que conectar los nodos*/
-
-int		ft_attach(char **argv, t_list **lst, int j)
-{
-	t_list	*new_node;
-	t_list *lastnod;
-	int new_number;
-
-	if (!argv[1][0])
-		ft_error();
-	new_node = malloc(sizeof(t_list));
-	if (!new_node)
-		return (ft_del(lst));
-	lastnod = ft_lastnode(*lst);
-	if (!lastnod)
-		*lst = new_node;
-	else
-		lastnod->next = new_node;
-	new_number = ft_atoi(argv, j);
-	new_node->number = new_number;
-   	new_node->next = NULL;
-	return (1);
-}
-
-
