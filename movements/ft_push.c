@@ -6,16 +6,17 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 16:59:54 by deordone          #+#    #+#             */
-/*   Updated: 2023/12/05 17:46:01 by deordone         ###   ########.fr       */
+/*   Updated: 2023/12/06 00:01:41 by carmeno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
 void	ft_push(t_list **stack1, t_list **stack2)
-{	
+{
 	*stack2 = (*stack1);
 	*stack1 = (*stack1)->next;
+	(*stack2)->next = NULL;
 }
 
 void	pa(t_list **stack_a, t_list **stack_b)

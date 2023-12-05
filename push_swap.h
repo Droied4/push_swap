@@ -6,7 +6,7 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:12:07 by deordone          #+#    #+#             */
-/*   Updated: 2023/12/05 17:44:22 by deordone         ###   ########.fr       */
+/*   Updated: 2023/12/05 23:56:42 by carmeno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int					ft_chefsort(t_list **stack_a, t_list **stack_b);
  * 	  Micro_sorts
    ╚═══════════════╝	*/
 void				ft_sort2(t_list **stack);
+void				ft_sort3(t_list **stack_a, t_list **stack_b);
 
 /* ╔═══════════════╗
  * 			Utils
@@ -63,7 +64,7 @@ void				ss(t_list **stack_a, t_list **stack_b);
 
 void				ft_push(t_list **stack1, t_list **stack2);
 void				pa(t_list **stack_a, t_list **stack_b);
-void				pa(t_list **stack_a, t_list **stack_b);
+void				pb(t_list **stack_a, t_list **stack_b);
 
 /* ╔═══════════════╗
  * 		lists

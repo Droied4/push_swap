@@ -6,7 +6,7 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:21:01 by deordone          #+#    #+#             */
-/*   Updated: 2023/12/05 16:59:16 by deordone         ###   ########.fr       */
+/*   Updated: 2023/12/05 23:59:24 by carmeno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	ft_sort2(t_list **stack)
 		sa(stack);
 	else
 		ft_error();
+	print_stack(stack);
 	ft_del(stack);
 	exit(0);
 }
@@ -30,10 +31,19 @@ void	ft_sort2(t_list **stack)
 		▀▄▀▄▀▄▀▄▀▄▀SORT 3▄▀▄▀▄▀▄▀▄▀▄▀▄
 */
 
-//void	ft_sort3(t_list **stack_a, t_list **stack_b)
-//{
-		
-//}
+void	ft_sort3(t_list **stack_a, t_list **stack_b)
+{
+	if (ft_lstsize(*stack_a) == 3 && ft_status_sort(*stack_a) == 1)
+		pb(stack_a, stack_b);
+	else
+		ft_error();
+	print_stack(stack_a);
+	printf("stack b\n");
+	print_stack(stack_b);
+	ft_del(stack_a);
+	ft_del(stack_b);
+	exit(0);
+}
 
 /*
 		▀▄▀▄▀▄▀▄▀▄▀SORT 4▄▀▄▀▄▀▄▀▄▀▄▀▄
