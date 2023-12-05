@@ -6,7 +6,7 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 13:14:46 by deordone          #+#    #+#             */
-/*   Updated: 2023/12/04 17:41:17 by deordone         ###   ########.fr       */
+/*   Updated: 2023/12/05 10:59:25 by deordone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,7 @@ int	ft_atoi(char **argv, int j)
 	while (argv[j][i] >= '0' && argv[j][i] <= '9')
 	{	
 		nb = nb * 10 + (argv[j][i] - '0'); 
-		if (ft_islimited(nb) < 0)
-			return (-1);
+		ft_islimited(nb);
 		i++;
 	}
 	return ((int)nb * sign);
@@ -50,7 +49,7 @@ int		ft_attach(char **argv, t_list **lst, int j)
 	int new_number;
 
 	if (!argv[1][0])
-		return (-1);
+		ft_error();
 	new_node = malloc(sizeof(t_list));
 	if (!new_node)
 		return (ft_del(lst));
@@ -60,8 +59,6 @@ int		ft_attach(char **argv, t_list **lst, int j)
 	else
 		lastnod->next = new_node;
 	new_number = ft_atoi(argv, j);
-	if (new_number == -1)
-		return (ft_del(lst));
 	new_node->number = new_number;
    	new_node->next = NULL;
 	return (1);

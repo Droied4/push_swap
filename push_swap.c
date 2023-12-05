@@ -6,7 +6,7 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 18:48:57 by deordone          #+#    #+#             */
-/*   Updated: 2023/12/04 17:41:45 by deordone         ###   ########.fr       */
+/*   Updated: 2023/12/05 10:50:09 by deordone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	main(int argc, char **argv)
 
 	if (ft_iscorrect(argc, argv, &stack_a) == 1)
 		printf("todo ok");
+	else
+		ft_error();
 	return (0);
 }
 
