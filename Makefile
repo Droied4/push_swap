@@ -6,17 +6,22 @@
 #    By: deordone <deordone@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/21 11:18:16 by deordone          #+#    #+#              #
-#    Updated: 2023/11/29 13:13:57 by deordone         ###   ########.fr        #
+#    Updated: 2023/12/05 14:22:00 by deordone         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap.a
-SOURCES = \
-	 push_swap.c ft_checker.c ft_chef.c ft_lst.c\
+
+DIRECTORIES = $(wildcard */)
+
+SOURCES = $(foreach dir,$(DIRECTORIES), $(wildcard $(dir)*.c)) 
+		  
 
 HEADER = push_swap.h
 
 OBJECTS = $(SOURCES:.c=.o)
+
+DEPS = $(OBJECTS:.o=.d)
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
@@ -26,6 +31,9 @@ all: author $(NAME)
 
 $(NAME): $(OBJECTS)
 		$(AR) $(NAME) $(OBJECTS)
+
+-include $(DEPS)
+
 %.o: %.c $(HEADER) Makefile
 		$(CC) $(CFLAGS) -c $< -o $@
 	

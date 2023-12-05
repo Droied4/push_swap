@@ -6,20 +6,20 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:21:01 by deordone          #+#    #+#             */
-/*   Updated: 2023/12/05 12:27:04 by deordone         ###   ########.fr       */
+/*   Updated: 2023/12/05 14:32:53 by deordone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 /*
 		▀▄▀▄▀▄▀▄▀▄▀SORT 2▄▀▄▀▄▀▄▀▄▀▄▀▄
 */
 
-void	ft_sort2(t_node **stack)
+void	ft_sort2(t_list **stack)
 {
-	if (ft_lstsize(*stack) == 2 && ft_status_sorted == 1)
-		sa(*stack);
+	if (ft_lstsize(*stack) == 2 && ft_status_sort(*stack) == 1)
+		sa(stack);
 	else
 		ft_error();
 	ft_del(stack);

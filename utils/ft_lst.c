@@ -6,11 +6,11 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 13:01:24 by deordone          #+#    #+#             */
-/*   Updated: 2023/12/05 12:27:01 by deordone         ###   ########.fr       */
+/*   Updated: 2023/12/05 14:27:45 by deordone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	ft_del(t_list **lst)
 {
@@ -61,7 +61,6 @@ int	ft_attach(char **argv, t_list **lst, int j)
 {
 	t_list	*new_node;
 	t_list	*lastnod;
-	int		new_number;
 
 	if (!argv[1][0])
 		ft_error();
@@ -78,16 +77,16 @@ int	ft_attach(char **argv, t_list **lst, int j)
 	return (1);
 }
 
-int	ft_status_sort(t_list **stack_a)
+int	ft_status_sort(t_list *stack_a)
 {
 	int	rslt;
 
 	rslt = 0;
-	while ((*stack_a)->next && rslt == 0)
+	while (stack_a->next && rslt == 0)
 	{
-		if ((*stack_a)->number > (stack_a)->next->number)
-			rslt == 1;
-		(*stack_a) = (*stack_a)->next;
+		if (stack_a->number > stack_a->next->number)
+			rslt = 1;
+		stack_a = stack_a->next;
 	}
 	return (rslt);
 }
