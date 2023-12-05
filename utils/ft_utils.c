@@ -6,7 +6,7 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 11:49:01 by deordone          #+#    #+#             */
-/*   Updated: 2023/12/05 13:56:54 by deordone         ###   ########.fr       */
+/*   Updated: 2023/12/05 17:47:10 by deordone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,16 @@ int	ft_atoi(char **argv, int j, t_list **stack_a)
 		i++;
 	}
 	return ((int)nb * sign);
+}
+
+void print_stack(t_list **stack)
+{
+	t_list **temp;
+
+	temp = stack;
+	while (*temp)
+	{
+		printf("value -> %d\n", (*temp)->number);
+		*temp = (*temp)->next;
+	}
 }

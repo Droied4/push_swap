@@ -6,7 +6,7 @@
 #    By: deordone <deordone@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/21 11:18:16 by deordone          #+#    #+#              #
-#    Updated: 2023/12/05 14:22:00 by deordone         ###   ########.fr        #
+#    Updated: 2023/12/05 18:23:22 by deordone         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,9 +27,9 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 AR = ar -rcs
 
-all: author $(NAME)
+all: header $(NAME)
 
-$(NAME): $(OBJECTS)
+$(NAME): $(OBJECTS) 
 		$(AR) $(NAME) $(OBJECTS)
 
 -include $(DEPS)
@@ -45,6 +45,23 @@ fclean : ok clean
 
 re: fclean all 
 
+header:
+	@tput setaf 214; printf "                   ▒▒▒▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\n";
+	@tput setaf 214; printf "               ▒▒▒▒▒▒▒▒▒     ▒▒▒▒▒▒  ▒▒▒▒▒▒▒▒\n";
+	@tput setaf 214; printf "             ▒▒▒▒▒▒▒▒▒       ▒▒▒▒     ▒▒▒▒▒▒▒\n";
+	@tput setaf 214; printf "           ▒▒▒▒▒▒▒▒▒         ▒▒      ▒▒▒▒▒▒▒\n";
+	@tput setaf 214; printf "         ▒▒▒▒▒▒▒▒▒                  ▒▒▒▒▒▒▒▒\n";
+	@tput setaf 214; printf "       ▒▒▒▒▒▒▒▒▒                  ▒▒▒▒▒▒▒▒\n";
+	@tput setaf 214; printf "     ▒▒▒▒▒▒▒▒                  ▒▒▒▒▒▒▒▒\n";
+	@tput setaf 214; printf "   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒     ▒▒▒▒▒▒▒▒     ▒▒\n";
+	@tput setaf 214; printf "   ▒▒▒▒▒▒ Droied ▒▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒    ▒▒▒▒\n";
+	@tput setaf 214; printf "   ▒▒▒▒▒▒▒ Pacman ▒▒▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒  ▒▒▒▒▒▒\n";
+	@tput setaf 214; printf "   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒   ▒▒ Barcelona ▒▒▒\n";
+	@tput setaf 214; printf "   ░░░░░   ░░░░░  ▒▒▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\n";
+	@tput setaf 214; printf "  ░░░░▀░░ ░▄ ░▄ ░ ▒▒▒▒▒▒▒▒      |\n";
+	@tput setaf 214; printf "  ░░░░░   ░░░░░░░ ▒▒▒▒▒▒▒▒      ╰┈➤Push_swap \n";
+	@tput setaf 214; printf "   ░░░░░  ░ ░ ░ ░ ▒▒▒▒▒▒▒▒\n";
+ 
 help: 
 	@echo "	▂▃▅▆█▆▅▃▂ Commands ▂▃▅▆█▆▅▃▂"
 	@tput setaf 014; echo "		  ► help"

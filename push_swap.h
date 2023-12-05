@@ -6,7 +6,7 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:12:07 by deordone          #+#    #+#             */
-/*   Updated: 2023/12/05 14:28:00 by deordone         ###   ########.fr       */
+/*   Updated: 2023/12/05 17:44:22 by deordone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ void				ft_sort2(t_list **stack);
  * 			Utils
    ╚═══════════════╝	*/
 int					ft_atoi(char **argv, int j, t_list **stack_a);
+
+void				print_stack(t_list **stack);
 /* ╔═══════════════╗
  * 		Checker
    ╚═══════════════╝	*/
@@ -54,6 +56,14 @@ void				ft_swap(t_list **stack);
 void				sa(t_list **stack_a);
 void				sb(t_list **stack_b);
 void				ss(t_list **stack_a, t_list **stack_b);
+
+/* ╔═══════════════╗
+ * 		Push
+   ╚═══════════════╝	*/
+
+void				ft_push(t_list **stack1, t_list **stack2);
+void				pa(t_list **stack_a, t_list **stack_b);
+void				pa(t_list **stack_a, t_list **stack_b);
 
 /* ╔═══════════════╗
  * 		lists
