@@ -6,7 +6,7 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:12:07 by deordone          #+#    #+#             */
-/*   Updated: 2023/12/05 23:56:42 by carmeno          ###   ########.fr       */
+/*   Updated: 2023/12/06 03:32:17 by carmeno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,14 @@ void				ft_push(t_list **stack1, t_list **stack2);
 void				pa(t_list **stack_a, t_list **stack_b);
 void				pb(t_list **stack_a, t_list **stack_b);
 
+/* ╔═══════════════╗
+ * 		Rotate
+   ╚═══════════════╝	*/
+
+void				ft_rotate(t_list **stack);
+void				ra(t_list **stack_a);
+void				rb(t_list **stack_b);
+void				rr(t_list **stack_a, t_list **stack_b);
 /* ╔═══════════════╗
  * 		lists
    ╚═══════════════╝	*/
