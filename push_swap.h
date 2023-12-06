@@ -6,7 +6,7 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:12:07 by deordone          #+#    #+#             */
-/*   Updated: 2023/12/06 03:32:17 by carmeno          ###   ########.fr       */
+/*   Updated: 2023/12/06 15:40:05 by carmeno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void				ft_sort3(t_list **stack_a, t_list **stack_b);
  * 			Utils
    ╚═══════════════╝	*/
 int					ft_atoi(char **argv, int j, t_list **stack_a);
+int					sort3_cases(t_list **stack_a);
 
 void				print_stack(t_list **stack);
 /* ╔═══════════════╗
@@ -74,6 +75,14 @@ void				ft_rotate(t_list **stack);
 void				ra(t_list **stack_a);
 void				rb(t_list **stack_b);
 void				rr(t_list **stack_a, t_list **stack_b);
+/* ╔═══════════════╗
+ * 		Reverse
+   ╚═══════════════╝	*/
+
+void				ft_reverse(t_list **stack);
+void				rra(t_list **stack_a);
+void				rrb(t_list **stack_b);
+void				rrr(t_list **stack_a, t_list **stack_b);
 /* ╔═══════════════╗
  * 		lists
    ╚═══════════════╝	*/

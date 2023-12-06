@@ -6,7 +6,7 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 11:49:01 by deordone          #+#    #+#             */
-/*   Updated: 2023/12/05 17:47:10 by deordone         ###   ########.fr       */
+/*   Updated: 2023/12/06 15:43:11 by carmeno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,31 @@ int	ft_atoi(char **argv, int j, t_list **stack_a)
 	return ((int)nb * sign);
 }
 
+int	sort3_cases(t_list **stack_a)
+{
+	t_list	*lastnode;
+	t_list	*middlenode;
+
+	lastnode = ft_lastnode(*stack_a);
+	middlenode = (*stack_a)->next;
+	if ((*stack_a)->number < lastnode->number)
+	{
+		if(middlenode->number < lastnode->number)
+			return (1);
+		return (3);	
+	}
+	else
+	{
+		if((middlenode->number > lastnode->number) && middlenode->number < (*stack_a)->number)
+			return (2);
+		else if((middlenode->number > lastnode->number) && middlenode->number > (*stack_a)->number)
+			return (4);
+		else
+			return (5);
+	}
+}
+
+/*la de printstack tiene que ser comentada antes de entragar*/
 void print_stack(t_list **stack)
 {
 	t_list **temp;
