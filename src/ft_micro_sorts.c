@@ -6,7 +6,7 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:21:01 by deordone          #+#    #+#             */
-/*   Updated: 2023/12/06 15:42:18 by carmeno          ###   ########.fr       */
+/*   Updated: 2023/12/06 16:45:42 by carmeno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ void	ft_sort3(t_list **stack_a, t_list **stack_b)
 	}
 	else
 		ft_error();
-	print_stack(stack_a);
+	print_stack(stack_a);	
+	printf("stack b\n");
 	print_stack(stack_b);
-	//printf("stack b\n");
 	ft_del(stack_a);
 	exit(0);
 }
@@ -64,6 +64,13 @@ void	ft_sort3(t_list **stack_a, t_list **stack_b)
 /*
 		▀▄▀▄▀▄▀▄▀▄▀SORT 4▄▀▄▀▄▀▄▀▄▀▄▀▄
 */
+void	ft_sort4(t_list **stack_a, t_list **stack_b)
+{
+	if (ft_lstsize(*stack_a) == 4 && ft_status_sort(*stack_a) == 1)
+	{
+		//buscar el mas pequeño empujar al stack b aplicar el sort y hacer el push al stack a
+	}
+}
 
 /*
 		▀▄▀▄▀▄▀▄▀▄▀SORT 5▄▀▄▀▄▀▄▀▄▀▄▀▄

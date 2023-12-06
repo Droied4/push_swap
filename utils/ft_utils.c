@@ -6,7 +6,7 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 11:49:01 by deordone          #+#    #+#             */
-/*   Updated: 2023/12/06 15:43:11 by carmeno          ###   ########.fr       */
+/*   Updated: 2023/12/06 17:09:04 by carmeno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,15 @@ int	sort3_cases(t_list **stack_a)
 			return (5);
 	}
 }
-
+/*
+t_list	*min_val(t_list **stack)
+{
+	while(*stack)
+	{
+		
+	}
+}
+t_list	*max_val(t_list **stack);*/
 /*la de printstack tiene que ser comentada antes de entragar*/
 void print_stack(t_list **stack)
 {
