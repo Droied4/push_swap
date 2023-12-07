@@ -6,7 +6,7 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 11:49:01 by deordone          #+#    #+#             */
-/*   Updated: 2023/12/06 17:09:04 by carmeno          ###   ########.fr       */
+/*   Updated: 2023/12/07 01:26:38 by carmeno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	ft_atoi(char **argv, int j, t_list **stack_a)
 	return ((int)nb * sign);
 }
 
-int	sort3_cases(t_list **stack_a)
+int	ft_sort3_cases(t_list **stack_a)
 {
 	t_list	*lastnode;
 	t_list	*middlenode;
@@ -62,15 +62,62 @@ int	sort3_cases(t_list **stack_a)
 			return (5);
 	}
 }
-/*
-t_list	*min_val(t_list **stack)
+
+int	ft_min_locator(t_list **stack)
 {
-	while(*stack)
+	t_list	*temp;
+	int	i;
+	int	min_pos;
+	int	min_value;
+
+	min_value = (*stack)->number;
+	temp = (*stack);
+	min_pos	= 0;
+	i = 0;
+	while(temp->next != NULL)
 	{
-		
+		if (temp->number < min_value)
+		{
+			min_value = temp->number;
+			min_pos = i;
+		}	
+		i++;
+		temp = temp->next;
 	}
+	if (temp->number < min_value)
+		min_pos++;
+	return (min_pos);
 }
-t_list	*max_val(t_list **stack);*/
+
+void	ft_putmin_top(t_list **stack_a)
+{
+	int	min_pos;
+	int	go_up;
+	int	go_down;
+	int	size;
+
+	min_pos = ft_min_locator(stack_a);
+	size = ft_lstsize(*stack_a);
+	go_up = min_pos;
+	go_down = size - min_pos;
+	if (go_up <= go_down)
+	{
+		while(go_up > 0)
+		{
+			ra(stack_a);
+			go_up--;
+		}
+	}
+	else if (go_down < go_up)
+	{
+		while(go_down > 0)
+		{
+			rra(stack_a);
+			go_down--;
+		}
+	}
+
+}
 /*la de printstack tiene que ser comentada antes de entragar*/
 void print_stack(t_list **stack)
 {

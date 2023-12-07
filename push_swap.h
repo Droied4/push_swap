@@ -6,7 +6,7 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:12:07 by deordone          #+#    #+#             */
-/*   Updated: 2023/12/06 15:40:05 by carmeno          ###   ########.fr       */
+/*   Updated: 2023/12/07 01:08:40 by carmeno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,18 @@ int					ft_chefsort(t_list **stack_a, t_list **stack_b);
 /* ╔═══════════════╗
  * 	  Micro_sorts
    ╚═══════════════╝	*/
-void				ft_sort2(t_list **stack);
-void				ft_sort3(t_list **stack_a, t_list **stack_b);
+void				ft_sort2(t_list **stack_a);
+void				ft_sort3(t_list **stack_a);
+void				ft_sort4(t_list **stack_a, t_list **stack_b);
+void				ft_sort5(t_list **stack_a, t_list **stack_b);
 
 /* ╔═══════════════╗
  * 			Utils
    ╚═══════════════╝	*/
 int					ft_atoi(char **argv, int j, t_list **stack_a);
-int					sort3_cases(t_list **stack_a);
+int					ft_sort3_cases(t_list **stack_a);
+int					ft_min_locator(t_list **stack);
+void					ft_putmin_top(t_list **stack_a);
 
 void				print_stack(t_list **stack);
 /* ╔═══════════════╗
