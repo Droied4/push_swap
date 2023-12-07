@@ -6,7 +6,7 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 16:59:54 by deordone          #+#    #+#             */
-/*   Updated: 2023/12/06 00:01:41 by carmeno          ###   ########.fr       */
+/*   Updated: 2023/12/07 18:08:18 by carmeno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,17 @@
 
 void	ft_push(t_list **stack1, t_list **stack2)
 {
-	*stack2 = (*stack1);
-	*stack1 = (*stack1)->next;
-	(*stack2)->next = NULL;
+
+	t_list	*tmp2;
+
+	if (stack1)
+	{
+		tmp2 = *stack1;
+		(*stack1) = (*stack1)->next;
+		tmp2->next = *stack2;
+		(*stack2) = tmp2;
+	}
+
 }
 
 void	pa(t_list **stack_a, t_list **stack_b)

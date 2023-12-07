@@ -6,7 +6,7 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 18:48:57 by deordone          #+#    #+#             */
-/*   Updated: 2023/12/07 01:11:59 by carmeno          ###   ########.fr       */
+/*   Updated: 2023/12/07 17:51:43 by carmeno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../push_swap.h"
@@ -30,7 +30,7 @@ int	ft_chefsort(t_list **stack_a, t_list **stack_b)
 		printf("[Insert bigSort]");
 	
 	print_stack(stack_a);
-	printf("stack_b");
+	printf("stack_b\n");
 	print_stack(stack_b);
 	if (stack_a)
 		ft_del(stack_a);
