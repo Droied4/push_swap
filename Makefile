@@ -6,7 +6,7 @@
 #    By: deordone <deordone@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/21 11:18:16 by deordone          #+#    #+#              #
-#    Updated: 2023/12/05 18:23:22 by deordone         ###   ########.fr        #
+#    Updated: 2023/12/08 13:18:55 by deordone         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,7 +55,7 @@ header:
 	@tput setaf 214; printf "     ▒▒▒▒▒▒▒▒                  ▒▒▒▒▒▒▒▒\n";
 	@tput setaf 214; printf "   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒     ▒▒▒▒▒▒▒▒     ▒▒\n";
 	@tput setaf 214; printf "   ▒▒▒▒▒▒ Droied ▒▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒    ▒▒▒▒\n";
-	@tput setaf 214; printf "   ▒▒▒▒▒▒▒ Pacman ▒▒▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒  ▒▒▒▒▒▒\n";
+	@tput setaf 214; printf "   ▒▒▒▒▒▒▒ Pacman ▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒  ▒▒▒▒▒▒\n";
 	@tput setaf 214; printf "   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒   ▒▒ Barcelona ▒▒▒\n";
 	@tput setaf 214; printf "   ░░░░░   ░░░░░  ▒▒▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\n";
 	@tput setaf 214; printf "  ░░░░▀░░ ░▄ ░▄ ░ ▒▒▒▒▒▒▒▒      |\n";

@@ -6,7 +6,7 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 11:49:01 by deordone          #+#    #+#             */
-/*   Updated: 2023/12/07 01:26:38 by carmeno          ###   ########.fr       */
+/*   Updated: 2023/12/08 13:39:16 by deordone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,10 @@ int	ft_min_locator(t_list **stack)
 		temp = temp->next;
 	}
 	if (temp->number < min_value)
-		min_pos++;
+	{
+		min_pos = i;
+		min_value = temp->number;
+	}
 	return (min_pos);
 }
 
