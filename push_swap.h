@@ -6,7 +6,7 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:12:07 by deordone          #+#    #+#             */
-/*   Updated: 2023/12/07 01:08:40 by carmeno          ###   ########.fr       */
+/*   Updated: 2023/12/10 17:47:07 by carmeno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,12 @@ void				ft_sort2(t_list **stack_a);
 void				ft_sort3(t_list **stack_a);
 void				ft_sort4(t_list **stack_a, t_list **stack_b);
 void				ft_sort5(t_list **stack_a, t_list **stack_b);
+
+/* ╔═══════════════╗
+ * 	  Big Sort
+   ╚═══════════════╝	*/
+void				ft_bigsort(t_list **stack_a, t_list **stack_b);
+
 
 /* ╔═══════════════╗
  * 			Utils
