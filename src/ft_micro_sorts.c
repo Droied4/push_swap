@@ -6,7 +6,7 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:21:01 by deordone          #+#    #+#             */
-/*   Updated: 2023/12/08 13:27:51 by deordone         ###   ########.fr       */
+/*   Updated: 2023/12/10 17:42:15 by carmeno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ void	ft_sort4(t_list **stack_a, t_list **stack_b)
 	if (ft_lstsize(*stack_a) == 4 && ft_status_sort(*stack_a) == 1)
 	{
 		ft_putmin_top(stack_a);
+		if (ft_status_sort(*stack_a) == 0)
+			return ;
 		pb(stack_a, stack_b);
 		ft_sort3(stack_a);
 		pa(stack_a, stack_b);
@@ -73,19 +75,12 @@ void	ft_sort4(t_list **stack_a, t_list **stack_b)
 
 void	ft_sort5(t_list **stack_a, t_list **stack_b)
 {
-	int i;
 
-	i = 2;
 	if (ft_lstsize(*stack_a) == 5 && ft_status_sort(*stack_a) == 1)
 	{
-		while (i != 0)
-		{
-			ft_putmin_top(stack_a);
-			pb(stack_a, stack_b);
-			i--;
-		}
-		ft_sort3(stack_a);
-		pa(stack_a, stack_b);
+		ft_putmin_top(stack_a);
+		pb(stack_a, stack_b);
+		ft_sort4(stack_a, stack_b);
 		pa(stack_a, stack_b);
 	}
 }
