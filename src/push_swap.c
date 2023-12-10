@@ -6,10 +6,10 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 18:48:57 by deordone          #+#    #+#             */
-/*   Updated: 2023/12/10 17:46:25 by carmeno          ###   ########.fr       */
+/*   Updated: 2023/12/10 21:09:12 by carmeno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "../push_swap.h"
+#include "push_swap.h"
 
 int	ft_chefsort(t_list **stack_a, t_list **stack_b)
 {

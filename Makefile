@@ -6,37 +6,34 @@
 #    By: deordone <deordone@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/21 11:18:16 by deordone          #+#    #+#              #
-#    Updated: 2023/12/08 13:18:55 by deordone         ###   ########.fr        #
+#    Updated: 2023/12/10 22:03:58 by carmeno          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap.a
+NAME = push_swap
 
-DIRECTORIES = $(wildcard */)
-
-SOURCES = $(foreach dir,$(DIRECTORIES), $(wildcard $(dir)*.c)) 
+SOURCES = src/ft_bigsort.c src/ft_lst.c src/ft_push.c src/ft_rotate.c \
+	  src/ft_utils.c src/ft_checker.c src/ft_micro_sorts.c \
+	  src/ft_reverse.c src/ft_swap.c src/push_swap.c
 		  
+HEADER = include/push_swap.h
 
-HEADER = push_swap.h
+BINDIR = bin
 
 OBJECTS = $(SOURCES:.c=.o)
 
-DEPS = $(OBJECTS:.o=.d)
-
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -Iinclude
 AR = ar -rcs
 
 all: header $(NAME)
 
-$(NAME): $(OBJECTS) 
+$(NAME): $(OBJECTS)
 		$(AR) $(NAME) $(OBJECTS)
 
--include $(DEPS)
-
 %.o: %.c $(HEADER) Makefile
-		$(CC) $(CFLAGS) -c $< -o $@
-	
+		 $(CC) $(CFLAGS) -c $< -o $@
+
 clean: ok
 	rm -f $(OBJECTS)
 
@@ -45,39 +42,54 @@ fclean : ok clean
 
 re: fclean all 
 
+# Definición de códigos de colores ANSI
+RED=\033[0;31m
+BLUE=\033[0;34m
+GREEN=\033[0;32m
+YELLOW=\033[0;33m
+WHITE=\033[0;97m
+EPIC_RED=\033[1;35m
+NC=\033[0m # No color
+
 header:
-	@tput setaf 214; printf "                   ▒▒▒▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\n";
-	@tput setaf 214; printf "               ▒▒▒▒▒▒▒▒▒     ▒▒▒▒▒▒  ▒▒▒▒▒▒▒▒\n";
-	@tput setaf 214; printf "             ▒▒▒▒▒▒▒▒▒       ▒▒▒▒     ▒▒▒▒▒▒▒\n";
-	@tput setaf 214; printf "           ▒▒▒▒▒▒▒▒▒         ▒▒      ▒▒▒▒▒▒▒\n";
-	@tput setaf 214; printf "         ▒▒▒▒▒▒▒▒▒                  ▒▒▒▒▒▒▒▒\n";
-	@tput setaf 214; printf "       ▒▒▒▒▒▒▒▒▒                  ▒▒▒▒▒▒▒▒\n";
-	@tput setaf 214; printf "     ▒▒▒▒▒▒▒▒                  ▒▒▒▒▒▒▒▒\n";
-	@tput setaf 214; printf "   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒     ▒▒▒▒▒▒▒▒     ▒▒\n";
-	@tput setaf 214; printf "   ▒▒▒▒▒▒ Droied ▒▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒    ▒▒▒▒\n";
-	@tput setaf 214; printf "   ▒▒▒▒▒▒▒ Pacman ▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒  ▒▒▒▒▒▒\n";
-	@tput setaf 214; printf "   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒   ▒▒ Barcelona ▒▒▒\n";
-	@tput setaf 214; printf "   ░░░░░   ░░░░░  ▒▒▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\n";
-	@tput setaf 214; printf "  ░░░░▀░░ ░▄ ░▄ ░ ▒▒▒▒▒▒▒▒      |\n";
-	@tput setaf 214; printf "  ░░░░░   ░░░░░░░ ▒▒▒▒▒▒▒▒      ╰┈➤Push_swap \n";
-	@tput setaf 214; printf "   ░░░░░  ░ ░ ░ ░ ▒▒▒▒▒▒▒▒\n";
+	@printf "\n";  
+	@printf "$(YELLOW)                   ▒▒▒▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\n";
+	@printf "               ▒▒▒▒▒▒▒▒▒     ▒▒▒▒▒▒  ▒▒▒▒▒▒▒▒\n";
+	@printf "             ▒▒▒▒▒▒▒▒▒       ▒▒▒▒     ▒▒▒▒▒▒▒\n";
+	@printf "           ▒▒▒▒▒▒▒▒▒         ▒▒      ▒▒▒▒▒▒▒\n";
+	@printf "         ▒▒▒▒▒▒▒▒▒                  ▒▒▒▒▒▒▒▒\n";
+	@printf "       ▒▒▒▒▒▒▒▒▒                  ▒▒▒▒▒▒▒▒\n";
+	@printf "     ▒▒▒▒▒▒▒▒                  ▒▒▒▒▒▒▒▒\n";
+	@printf "   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒     ▒▒▒▒▒▒▒▒     ▒▒\n";
+	@printf "   ▒▒▒▒▒▒ Droied$(YELLOW) ▒▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒    ▒▒▒▒\n";
+	@printf "   ▒▒▒▒▒▒▒ Pacman ▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒  ▒▒▒▒▒▒\n";
+	@printf "   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒   ▒▒ Barcelona ▒▒▒\n";
+	@printf "   ░░░░░ $(BLUE)  ░░░░░ $(YELLOW) ▒▒▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\n";
+	@printf "  ░░░░$(WHITE)▀$(YELLOW)░░$(BLUE) ░$(WHITE)▄ $(BLUE)░$(WHITE)▄ $(BLUE)░ $(YELLOW)▒▒▒▒▒▒▒▒      |\n";
+	@printf "  ░░░░░  $(BLUE) ░░░░░░░$(YELLOW) ▒▒▒▒▒▒▒▒      ╰┈➤Push_swap \n";
+	@printf "   ░░░░░ $(BLUE) ░ ░ ░ ░$(YELLOW) ▒▒▒▒▒▒▒▒$(NC)\n";
+	@printf "\n";  
  
 help: 
-	@echo "	▂▃▅▆█▆▅▃▂ Commands ▂▃▅▆█▆▅▃▂"
-	@tput setaf 014; echo "		  ► help"
-	@tput setaf 014; echo "		  ► clean"
-	@tput setaf 014; echo "		  ► fclean"
-	@tput setaf 014; echo "		  ► re"
-	@tput setaf 014; echo "		  ► author"
+	@printf "\n";  
+	@printf "	▂▃▅▆█▆▅▃▂ Commands ▂▃▅▆█▆▅▃▂\n";
+	@printf "$(BLUE)		  ► help \n";
+	@printf "		  ► clean \n";
+	@printf "		  ► fclean \n";
+	@printf "		  ► re \n";
+	@printf "		  ► author $(NC)  \n";
+	@printf "\n"; 
 #	@tput setaf 009; echo "		  ► bonus "
 
 author: 
-	@tput setaf 044; echo 
-	@tput setaf 044; echo "		       	       Created by Droied - Ataraxia"
-	@tput setaf 222; echo "		  ══════════════════════════「₪」══════════════════════════"
-	@tput setaf 044; echo "		        	https://github.com/Droied4"
-	@tput setaf 044; echo 
+	@printf "\n";
+	@printf "$(GREEN)		       	       Created by Droied - Ataraxia\n";
+	@printf "$(EPIC_RED)		  ══════════════════════════「₪」══════════════════════════\n";
+	@printf "$(GREEN)		        	https://github.com/Droied4 \n";
+	@printf "\n"; 
 
 ok:
-	@tput setaf 002; echo "Ok"
+	@printf "\n"; 
+	@printf "$(GREEN)Ok";
+	@printf "\n"; 
 .PHONY: all clean fclean re

@@ -6,11 +6,11 @@
 /*   By: carmeno <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 17:12:29 by carmeno           #+#    #+#             */
-/*   Updated: 2023/12/10 17:22:24 by carmeno          ###   ########.fr       */
+/*   Updated: 2023/12/10 21:08:20 by carmeno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 void	ft_bigsort(t_list **stack_a, t_list **stack_b)
 {

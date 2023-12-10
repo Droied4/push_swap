@@ -6,11 +6,11 @@
 /*   By: carmeno <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 03:33:05 by carmeno           #+#    #+#             */
-/*   Updated: 2023/12/06 15:07:51 by carmeno          ###   ########.fr       */
+/*   Updated: 2023/12/10 21:09:02 by carmeno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 void    ft_reverse(t_list **stack)
 {

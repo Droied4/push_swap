@@ -6,10 +6,10 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 12:29:36 by deordone          #+#    #+#             */
-/*   Updated: 2023/12/05 13:56:34 by deordone         ###   ########.fr       */
+/*   Updated: 2023/12/10 21:08:50 by carmeno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "../push_swap.h"
+#include "push_swap.h"
 /*check 0 - check if all is correct and create the list*/
 int	ft_iscorrect(int argc, char **argv, t_list **stack_a)
 {

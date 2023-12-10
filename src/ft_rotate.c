@@ -6,11 +6,11 @@
 /*   By: carmeno <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 00:03:56 by carmeno           #+#    #+#             */
-/*   Updated: 2023/12/06 15:17:22 by carmeno          ###   ########.fr       */
+/*   Updated: 2023/12/10 21:08:38 by carmeno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 void	ft_rotate(t_list **stack)
 {

@@ -6,11 +6,11 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 16:59:54 by deordone          #+#    #+#             */
-/*   Updated: 2023/12/07 18:08:18 by carmeno          ###   ########.fr       */
+/*   Updated: 2023/12/10 21:08:33 by carmeno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 void	ft_push(t_list **stack1, t_list **stack2)
 {
