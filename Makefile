@@ -6,21 +6,21 @@
 #    By: deordone <deordone@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/21 11:18:16 by deordone          #+#    #+#              #
-#    Updated: 2023/12/10 22:03:58 by carmeno          ###   ########.fr        #
+#    Updated: 2023/12/12 16:06:09 by deordone         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-SOURCES = src/ft_bigsort.c src/ft_lst.c src/ft_push.c src/ft_rotate.c \
-	  src/ft_utils.c src/ft_checker.c src/ft_micro_sorts.c \
-	  src/ft_reverse.c src/ft_swap.c src/push_swap.c
+SOURCES = ft_bigsort.c ft_lst.c ft_push.c ft_rotate.c \
+	  ft_utils.c ft_checker.c ft_micro_sorts.c \
+	  ft_reverse.c ft_swap.c push_swap.c
 		  
 HEADER = include/push_swap.h
 
 BINDIR = bin
 
-OBJECTS = $(SOURCES:.c=.o)
+OBJECTS = $(addprefix obj/, ${SOURCES:.c=.o})
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -Iinclude
@@ -31,11 +31,12 @@ all: header $(NAME)
 $(NAME): $(OBJECTS)
 		$(AR) $(NAME) $(OBJECTS)
 
-%.o: %.c $(HEADER) Makefile
+obj/%.o: src/%.c $(HEADER) Makefile
+		@mkdir -p $(dir $@)
 		 $(CC) $(CFLAGS) -c $< -o $@
 
 clean: ok
-	rm -f $(OBJECTS)
+	rm -rf obj
 
 fclean : ok clean
 		rm -rf $(NAME)
