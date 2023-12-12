@@ -6,7 +6,7 @@
 #    By: deordone <deordone@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/21 11:18:16 by deordone          #+#    #+#              #
-#    Updated: 2023/12/12 16:06:09 by deordone         ###   ########.fr        #
+#    Updated: 2023/12/12 18:18:47 by deordone         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,16 +24,17 @@ OBJECTS = $(addprefix obj/, ${SOURCES:.c=.o})
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -Iinclude
-AR = ar -rcs
 
 all: header $(NAME)
 
 $(NAME): $(OBJECTS)
-		$(AR) $(NAME) $(OBJECTS)
+		@printf "$(GREEN)";  
+		$(CC) $(CFLAGS) $(OBJECTS) -o $(NAME)
 
 obj/%.o: src/%.c $(HEADER) Makefile
+		@printf "$(GREEN)";  
 		@mkdir -p $(dir $@)
-		 $(CC) $(CFLAGS) -c $< -o $@
+		$(CC) $(CFLAGS) -c $< -o $@
 
 clean: ok
 	rm -rf obj
@@ -45,31 +46,34 @@ re: fclean all
 
 # Definición de códigos de colores ANSI
 RED=\033[0;31m
-BLUE=\033[0;34m
+CYAN=\033[0;36m
 GREEN=\033[0;32m
 YELLOW=\033[0;33m
 WHITE=\033[0;97m
-EPIC_RED=\033[1;35m
+BLUE=\033[0;34m
 NC=\033[0m # No color
 
-header:
-	@printf "\n";  
-	@printf "$(YELLOW)                   ▒▒▒▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\n";
-	@printf "               ▒▒▒▒▒▒▒▒▒     ▒▒▒▒▒▒  ▒▒▒▒▒▒▒▒\n";
-	@printf "             ▒▒▒▒▒▒▒▒▒       ▒▒▒▒     ▒▒▒▒▒▒▒\n";
-	@printf "           ▒▒▒▒▒▒▒▒▒         ▒▒      ▒▒▒▒▒▒▒\n";
-	@printf "         ▒▒▒▒▒▒▒▒▒                  ▒▒▒▒▒▒▒▒\n";
-	@printf "       ▒▒▒▒▒▒▒▒▒                  ▒▒▒▒▒▒▒▒\n";
-	@printf "     ▒▒▒▒▒▒▒▒                  ▒▒▒▒▒▒▒▒\n";
-	@printf "   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒     ▒▒▒▒▒▒▒▒     ▒▒\n";
-	@printf "   ▒▒▒▒▒▒ Droied$(YELLOW) ▒▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒    ▒▒▒▒\n";
-	@printf "   ▒▒▒▒▒▒▒ Pacman ▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒  ▒▒▒▒▒▒\n";
-	@printf "   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒   ▒▒ Barcelona ▒▒▒\n";
-	@printf "   ░░░░░ $(BLUE)  ░░░░░ $(YELLOW) ▒▒▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\n";
-	@printf "  ░░░░$(WHITE)▀$(YELLOW)░░$(BLUE) ░$(WHITE)▄ $(BLUE)░$(WHITE)▄ $(BLUE)░ $(YELLOW)▒▒▒▒▒▒▒▒      |\n";
-	@printf "  ░░░░░  $(BLUE) ░░░░░░░$(YELLOW) ▒▒▒▒▒▒▒▒      ╰┈➤Push_swap \n";
-	@printf "   ░░░░░ $(BLUE) ░ ░ ░ ░$(YELLOW) ▒▒▒▒▒▒▒▒$(NC)\n";
-	@printf "\n";  
+header: marc
+	@printf "$(RED)		  ══════════════════════════「₪」══════════════════════════\n";
+	@echo
+	@printf "     	          $(YELLOW)                      ▒▒▒▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\n";
+	@printf "	     	                      ▒▒▒▒▒▒▒▒▒     ▒▒▒▒▒▒  ▒▒▒▒▒▒▒▒\n";
+	@printf "	     	                    ▒▒▒▒▒▒▒▒▒       ▒▒▒▒     ▒▒▒▒▒▒▒\n";
+	@printf "	     	                  ▒▒▒▒▒▒▒▒▒         ▒▒      ▒▒▒▒▒▒▒\n";
+	@printf "	     	                ▒▒▒▒▒▒▒▒▒                  ▒▒▒▒▒▒▒▒\n";
+	@printf "	     	              ▒▒▒▒▒▒▒▒▒                  ▒▒▒▒▒▒▒▒\n";
+	@printf "	     	            ▒▒▒▒▒▒▒▒                  ▒▒▒▒▒▒▒▒\n";
+	@printf "	     	          ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒     ▒▒▒▒▒▒▒▒     ▒▒\n";
+	@printf "	     	          ▒▒▒▒▒▒ Droied$(YELLOW) ▒▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒    ▒▒▒▒\n";
+	@printf "	     	          ▒▒▒▒▒▒▒ Pacman ▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒  ▒▒▒▒▒▒\n";
+	@printf "	     	          ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒   ▒▒ Barcelona ▒▒▒\n";
+	@printf "	     	          ░░░░░ $(BLUE)  ░░░░░ $(YELLOW) ▒▒▒▒▒▒▒▒   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\n";
+	@printf "	     	         ░░░░$(WHITE)▀$(YELLOW)░░$(BLUE) ░$(WHITE)▄ $(BLUE)░$(WHITE)▄ $(BLUE)░ $(YELLOW)▒▒▒▒▒▒▒▒      |\n";
+	@printf "	    	         ░░░░░  $(BLUE) ░░░░░░░$(YELLOW) ▒▒▒▒▒▒▒▒      ╰┈➤Push_swap \n";
+	@printf "	     	          ░░░░░ $(BLUE) ░ ░ ░ ░$(YELLOW) ▒▒▒▒▒▒▒▒$(NC)\n";
+	@echo
+	@printf "$(RED)		  ══════════════════════════「₪」══════════════════════════\n";
+	@echo
  
 help: 
 	@printf "\n";  
@@ -84,13 +88,16 @@ help:
 
 author: 
 	@printf "\n";
-	@printf "$(GREEN)		       	       Created by Droied - Ataraxia\n";
-	@printf "$(EPIC_RED)		  ══════════════════════════「₪」══════════════════════════\n";
-	@printf "$(GREEN)		        	https://github.com/Droied4 \n";
-	@printf "\n"; 
+	@printf "$(CYAN)		       	       Created by Droied - Ataraxia\n";
+	@printf "$(RED)		  ══════════════════════════「₪」══════════════════════════\n";
+	@printf "$(CYAN)		        	https://github.com/Droied4 \n";
+
+marc: 
+	@printf "\n";
+
 
 ok:
 	@printf "\n"; 
-	@printf "$(GREEN)Ok";
+	@printf "$(RED)Ok";
 	@printf "\n"; 
 .PHONY: all clean fclean re

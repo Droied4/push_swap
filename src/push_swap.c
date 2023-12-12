@@ -6,7 +6,7 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 18:48:57 by deordone          #+#    #+#             */
-/*   Updated: 2023/12/10 21:09:12 by carmeno          ###   ########.fr       */
+/*   Updated: 2023/12/12 18:21:08 by deordone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -29,9 +29,9 @@ int	ft_chefsort(t_list **stack_a, t_list **stack_b)
 	else if (ft_lstsize(*stack_a) > 5)
 		ft_bigsort(stack_a, stack_b);
 	
-	print_stack(stack_a);
+/*	print_stack(stack_a);
 	printf("stack_b\n");
-	print_stack(stack_b);
+	print_stack(stack_b);*/
 	if (stack_a)
 		ft_del(stack_a);
 	if (stack_b)
