@@ -6,7 +6,7 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 11:49:01 by deordone          #+#    #+#             */
-/*   Updated: 2023/12/12 18:04:25 by deordone         ###   ########.fr       */
+/*   Updated: 2023/12/13 17:59:44 by deordone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,15 +48,17 @@ int	ft_sort3_cases(t_list **stack_a)
 	middlenode = (*stack_a)->next;
 	if ((*stack_a)->number < lastnode->number)
 	{
-		if(middlenode->number < lastnode->number)
+		if (middlenode->number < lastnode->number)
 			return (1);
-		return (3);	
+		return (3);
 	}
 	else
 	{
-		if((middlenode->number > lastnode->number) && middlenode->number < (*stack_a)->number)
+		if ((middlenode->number > lastnode->number)
+			&& middlenode->number < (*stack_a)->number)
 			return (2);
-		else if((middlenode->number > lastnode->number) && middlenode->number > (*stack_a)->number)
+		else if ((middlenode->number > lastnode->number)
+			&& middlenode->number > (*stack_a)->number)
 			return (4);
 		else
 			return (5);
@@ -66,21 +68,21 @@ int	ft_sort3_cases(t_list **stack_a)
 int	ft_min_locator(t_list **stack)
 {
 	t_list	*temp;
-	int	i;
-	int	min_pos;
-	int	min_value;
+	int		i;
+	int		min_pos;
+	int		min_value;
 
 	min_value = (*stack)->number;
 	temp = (*stack);
-	min_pos	= 0;
+	min_pos = 0;
 	i = 0;
-	while(temp->next != NULL)
+	while (temp->next != NULL)
 	{
 		if (temp->number < min_value)
 		{
 			min_value = temp->number;
 			min_pos = i;
-		}	
+		}
 		i++;
 		temp = temp->next;
 	}
@@ -105,7 +107,7 @@ void	ft_putmin_top(t_list **stack_a)
 	go_down = size - min_pos;
 	if (go_up <= go_down)
 	{
-		while(go_up > 0)
+		while (go_up > 0)
 		{
 			ra(stack_a);
 			go_up--;
@@ -113,23 +115,10 @@ void	ft_putmin_top(t_list **stack_a)
 	}
 	else if (go_down < go_up)
 	{
-		while(go_down > 0)
+		while (go_down > 0)
 		{
 			rra(stack_a);
 			go_down--;
 		}
-	}
-
-}
-/*la de printstack tiene que ser comentada antes de entragar*/
-void print_stack(t_list **stack)
-{
-	t_list **temp;
-
-	temp = stack;
-	while (*temp)
-	{
-		printf("value -> %d\n", (*temp)->number);
-		*temp = (*temp)->next;
 	}
 }

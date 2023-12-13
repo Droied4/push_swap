@@ -6,10 +6,11 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 12:29:36 by deordone          #+#    #+#             */
-/*   Updated: 2023/12/12 18:33:51 by deordone         ###   ########.fr       */
+/*   Updated: 2023/12/13 18:23:45 by deordone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
+
 /*check 0 - check if all is correct and create the list*/
 int	ft_iscorrect(int argc, char **argv, t_list **stack_a)
 {
@@ -26,7 +27,8 @@ int	ft_iscorrect(int argc, char **argv, t_list **stack_a)
 		j++;
 	}
 	ft_isrepeated(stack_a);
-	return (1);
+	ft_index_stack(stack_a);
+	return (0);
 }
 /* check 1 - looks for valid parameters */
 
@@ -36,28 +38,26 @@ int	ft_isvalid(int argc, char **argv)
 	int	j;
 
 	j = 1;
-/*	if (argc <= 2)
-		exit(1);*/
-	if (argc <= 2 || argv[2][0] == '\0')
+	if (argc <= 2 ||argv[2][0] == '\0')
 		ft_error();
 	while (argv[j])
 	{
 		i = 0;
+		if (argv[j][0] == '-' || argv[j][0] == '+')
+			i++;
 		while (argv[j][i] != '\0')
 		{
 			if (((argv[j][i] == '-') && (argv[j][i + 1] == '-') && (argv[j][i
 						- 1] != ' ')) || ((argv[j][i]) == '+' && (argv[j][i
 						+ 1] == '+') && argv[j][i - 1] != ' '))
 				ft_error();
-			if (argv[j][0] == '-' || argv[j][0] == '+')
-				i++;
 			if (!(argv[j][i] >= '0' && argv[j][i] <= '9'))
 				ft_error();
 			i++;
 		}
 		j++;
 	}
-	return (1);
+	return (0);
 }
 /* check 2 - looks for equal numbers*/
 
@@ -85,7 +85,7 @@ int	ft_isrepeated(t_list **stack_a)
 		}
 		temp1 = temp1->next;
 	}
-	return (1);
+	return (0);
 }
 /* check 3 - look for the INT_MIN and MAX_INT */
 

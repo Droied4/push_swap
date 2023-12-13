@@ -6,7 +6,7 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 13:01:24 by deordone          #+#    #+#             */
-/*   Updated: 2023/12/10 21:08:26 by carmeno          ###   ########.fr       */
+/*   Updated: 2023/12/13 18:00:08 by deordone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ int	ft_attach(char **argv, t_list **lst, int j)
 	else
 		lastnod->next = new_node;
 	new_node->number = ft_atoi(argv, j, lst);
+	new_node->index = -1;
 	new_node->next = NULL;
 	return (1);
 }

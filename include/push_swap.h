@@ -6,7 +6,7 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:12:07 by deordone          #+#    #+#             */
-/*   Updated: 2023/12/10 17:47:07 by carmeno          ###   ########.fr       */
+/*   Updated: 2023/12/13 15:54:38 by deordone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,14 @@
 typedef struct s_list
 {
 	int				number;
-	// int				index;
+	int				index;
 	struct s_list	*next;
 }					t_list;
 /* ╔═══════════════╗
- * 			 Main
+ * 		  Main
    ╚═══════════════╝	*/
 int					ft_chefsort(t_list **stack_a, t_list **stack_b);
+void				print_stack(t_list **stack);
 
 /* ╔═══════════════╗
  * 	  Micro_sorts
@@ -38,20 +39,19 @@ void				ft_sort4(t_list **stack_a, t_list **stack_b);
 void				ft_sort5(t_list **stack_a, t_list **stack_b);
 
 /* ╔═══════════════╗
- * 	  Big Sort
+ * 	   Radix Sort
    ╚═══════════════╝	*/
-void				ft_bigsort(t_list **stack_a, t_list **stack_b);
-
+void				ft_radix_sort(t_list **stack_a, t_list **stack_b);
+void				ft_index_stack(t_list **stack);
 
 /* ╔═══════════════╗
- * 			Utils
+ * 	  	 Utils
    ╚═══════════════╝	*/
 int					ft_atoi(char **argv, int j, t_list **stack_a);
 int					ft_sort3_cases(t_list **stack_a);
 int					ft_min_locator(t_list **stack);
-void					ft_putmin_top(t_list **stack_a);
+void				ft_putmin_top(t_list **stack_a);
 
-void				print_stack(t_list **stack);
 /* ╔═══════════════╗
  * 		Checker
    ╚═══════════════╝	*/
@@ -61,7 +61,7 @@ int					ft_islimited(long nb, t_list **stack_a);
 int					ft_iscorrect(int argc, char **argv, t_list **stack_a);
 void				ft_error(void);
 /* ╔═══════════════╗
- * 		Swap
+ * 		 Swap
    ╚═══════════════╝	*/
 
 void				ft_swap(t_list **stack);
@@ -70,7 +70,7 @@ void				sb(t_list **stack_b);
 void				ss(t_list **stack_a, t_list **stack_b);
 
 /* ╔═══════════════╗
- * 		Push
+ * 		 Push
    ╚═══════════════╝	*/
 
 void				ft_push(t_list **stack1, t_list **stack2);

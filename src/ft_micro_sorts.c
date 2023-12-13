@@ -6,7 +6,7 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:21:01 by deordone          #+#    #+#             */
-/*   Updated: 2023/12/10 21:08:56 by carmeno          ###   ########.fr       */
+/*   Updated: 2023/12/13 15:52:38 by deordone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_sort3(t_list **stack_a)
 {
 	if (ft_lstsize(*stack_a) == 3 && ft_status_sort(*stack_a) == 1)
 	{
-		if(ft_sort3_cases(stack_a) == 1)
+		if (ft_sort3_cases(stack_a) == 1)
 			sa(stack_a);
 		else if (ft_sort3_cases(stack_a) == 2)
 		{
@@ -75,7 +75,6 @@ void	ft_sort4(t_list **stack_a, t_list **stack_b)
 
 void	ft_sort5(t_list **stack_a, t_list **stack_b)
 {
-
 	if (ft_lstsize(*stack_a) == 5 && ft_status_sort(*stack_a) == 1)
 	{
 		ft_putmin_top(stack_a);

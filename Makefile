@@ -6,13 +6,13 @@
 #    By: deordone <deordone@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/21 11:18:16 by deordone          #+#    #+#              #
-#    Updated: 2023/12/12 18:18:47 by deordone         ###   ########.fr        #
+#    Updated: 2023/12/13 15:21:02 by deordone         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-SOURCES = ft_bigsort.c ft_lst.c ft_push.c ft_rotate.c \
+SOURCES = ft_radix_sort.c ft_lst.c ft_push.c ft_rotate.c \
 	  ft_utils.c ft_checker.c ft_micro_sorts.c \
 	  ft_reverse.c ft_swap.c push_swap.c
 		  
