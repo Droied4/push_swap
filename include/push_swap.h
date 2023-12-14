@@ -6,7 +6,7 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:12:07 by deordone          #+#    #+#             */
-/*   Updated: 2023/12/13 15:54:38 by deordone         ###   ########.fr       */
+/*   Updated: 2023/12/14 16:08:04 by deordone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void				ft_putmin_top(t_list **stack_a);
 /* ╔═══════════════╗
  * 		Checker
    ╚═══════════════╝	*/
-int					ft_isvalid(int argc, char **argv);
+int					ft_isvalid(char **argv);
 int					ft_isrepeated(t_list **stack_a);
 int					ft_islimited(long nb, t_list **stack_a);
 int					ft_iscorrect(int argc, char **argv, t_list **stack_a);
