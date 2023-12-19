@@ -49,6 +49,8 @@ int	ft_isvalid(char **argv)
 			i++;
 		while (argv[j][i] != '\0')
 		{
+			if (argv[j][0] == '\0');
+				ft_error();
 			if (((argv[j][i] == '-') && (argv[j][i + 1] == '-') && (argv[j][i
 						- 1] != ' ')) || ((argv[j][i]) == '+' && (argv[j][i
 						+ 1] == '+') && argv[j][i - 1] != ' '))
