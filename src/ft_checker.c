@@ -6,7 +6,7 @@
 /*   By: deordone <deordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 12:29:36 by deordone          #+#    #+#             */
-/*   Updated: 2023/12/14 16:26:29 by deordone         ###   ########.fr       */
+/*   Updated: 2024/02/03 08:27:39 by deordone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -49,7 +49,7 @@ int	ft_isvalid(char **argv)
 			i++;
 		while (argv[j][i] != '\0')
 		{
-			if (argv[j][0] == '\0');
+			if (argv[j][0] == '\0')
 				ft_error();
 			if (((argv[j][i] == '-') && (argv[j][i + 1] == '-') && (argv[j][i
 						- 1] != ' ')) || ((argv[j][i]) == '+' && (argv[j][i
